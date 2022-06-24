@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo&family=Bellota+Text:wght@300&family=Lobster+Two&family=Noto+Sans&family=Open+Sans&family=Overlock&family=Pacifico&family=Playfair+Display:ital@0;1&family=Ubuntu&family=Vollkorn&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="button-creator">
+        <form id="controles">
+            <label for="text">texto</label>
+            <input type="text" name="text" id="text">
+
+            <label for="color">cor</label>
+            <input type="color" name="color" id="color">
+
+            <label for="backgroundColor">background-color</label>
+            <input type="color" name="backgroundColor" id="backgroundColor">
+
+            <label for="height">heigth</label>
+            <input type="range" name="height" id="height" min="0" max="200">
+
+            <label for="width">width</label>
+            <input type="range" name="width" id="width" min="0" max="200">
+
+            <label for="border">border</label>
+            <input type="text" name="border" id="border">
+
+            <label for="borderRadius">border-radius</label>
+            <input type="range" name="borderRadius" id="borderRadius" min="0" max="100">
+
+            <select name="fontFamily" id="font">
+                <optgroup label="Sans serif" id="sans-serif">
+                    <option value="Calibri">Calibri</option>
+                    <option value="Open Sans">Open Sans</option>
+                    <option value="Ubuntu">Ubuntu</option>
+                    <option value="Roboto">Roboto</option>
+                    <option value="Noto Sans">Noto (nagari, thai, viet)</option>
+                </optgroup>
+                <optgroup label="Serif" id="serif">
+                    <option value="Vollkorn">Vollkorn</option>
+                    <option value="Playfair Display">Playfair Display</option>
+                    <option value="Arvo">Arvo</option>
+                </optgroup>
+                <optgroup label="Fantasy / Cursive" id="cursive">
+                    <option value="Pacifico">Pacifico</option>
+                    <option value="Lobster Two">Lobster Two</option>
+                    <option value="Overlock">Overlock</option>
+                    <option value="Bellota">Bellota</option>
+                </optgroup>
+            </select>
+
+            <label for="fontSize">font-size</label>
+            <input type="number" name="fontSize" id="fontSize">
+        </form>
+
+        <section class="resultado">
+            <button class="btn">Estilize-me!</button>
+            <pre>
+                <code class="css">
+
+                </code>
+            </pre>
+        </section>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
