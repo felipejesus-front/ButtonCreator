@@ -37,10 +37,26 @@ const styleList = {
 function handleChange(event){
     styleName = event.target.name;
     styleValue = event.target.value;
-    console.log(styleName, styleValue)
+
     styleList[styleName](styleValue);
+    saveChanges(styleName, styleValue);
     showCss();
 }
+
+function saveChanges(name, value){
+    localStorage[name] = value;
+}
+
+function applySavedChanges(){
+    const propriedades = Object.keys(localStorage);
+    propriedades.forEach(propriedade => {
+        styleList[propriedade](localStorage[propriedade]);
+        controles.elements[propriedade].value = localStorage[propriedade];
+
+    })
+    showCss();
+}
+applySavedChanges();
 
  function showCss(){
      cssText.innerHTML = '<span>' + btn.style.cssText.split('; ').join(';</span><span>')
